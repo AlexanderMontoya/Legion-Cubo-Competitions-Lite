@@ -1,0 +1,448 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    font-family: fantasy, Arial, Helvetica, sans-serif;
+}
+
+.inicio{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    animation: inicio 3s 0.5s;
+}
+
+.inicio img{
+    width: 40%;
+}
+
+@keyframes inicio{
+    0%{
+        visibility: visible;
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.pant1{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton_menu{
+    display: none;
+    cursor: pointer;
+    color: white;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.siguiente_ronda{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.contenedor_rondas, .contenedor_versus{
+    display: none;
+    width: 280px;
+    height: 100%;
+    padding: 100px 15px;
+    background-color: rgb(128, 126, 126);
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: -300px;
+}
+
+.contenedor_versus table{
+    width: 100%;
+    font-family: Arial;
+    font-size: 15px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.contenedor_versus td{
+    padding: 10px 0px;
+}
+
+.contenedor_versus th{
+    padding: 10px 0px;
+    width: 10%;
+    background-color: white;
+    color: black;
+}
+
+.contenedor_versus .nombre{
+    width: 40%;
+}
+
+.contenedor_rondas_show{
+    display: block;
+    top: 0;
+    left: 0;
+    animation: anim_contenedor_rondas 0.5s;
+}
+
+@keyframes anim_contenedor_rondas{
+    0%{
+        transform: translateX(-300px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.contenedor_rondas>.botones{
+    width: 90%;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.principal{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoria{
+    width: 300px;
+    visibility: hidden;
+    display: none;
+    flex-wrap: wrap;
+    animation: categoriavisible 2s 3.1s forwards;
+    color: white;  
+}
+
+.label{
+    font-size: 19px;
+    color: white;
+}
+
+@keyframes categoriavisible{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.categoria>.input{
+    width: 150px;
+}
+
+.categoria>.botones{
+    width: 150px;
+    margin-top: 20px; 
+}
+
+.input{
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+select option{
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
+
+.botones{
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-bottom: 4px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+.inscripcion{
+    display: none;
+    width: 400px;
+    height: 300px;
+    flex-wrap: wrap;
+}
+
+.rondas{
+    display: none;
+    width: 65%;
+    position: absolute;
+    flex-wrap: wrap;
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px 0px;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+.rondas h2{
+    margin-bottom: 10px;
+}
+
+.rondas table{
+    width: 100%;
+    text-align: center;
+    border-collapse:collapse;
+    color: white;
+}
+
+.rondas table td{
+    padding: 10px 0px;
+}
+
+.rondas table th{
+    background-color: white;
+    color: black;
+    padding: 10px 0px;
+    font-family: Arial;
+}
+
+.inscripcion>.input{
+    width: 75%;
+}
+
+.inscripcion>.botones{
+    width: 52%;
+}
+
+.pant_puntos{
+    display: none;
+    width: 300px;
+    height: 120px;
+    flex-wrap: wrap;
+}
+
+.pant_rondas{
+    display: none;
+    width: 300px;
+    height: 120px;
+    flex-wrap: wrap;
+}
+
+.pant_mezclas{
+    display: none;
+    width: 300px;
+    height: 120px;
+    flex-wrap: wrap;
+}
+
+.pant_participantes{
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#pant_mezcla{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.competidor{
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.competidor>.input{
+    margin-left: 5px;
+}
+
+.input_pequeño{
+    width: 80px;
+}
+
+.botones:hover{
+    background-color: white;
+    color: black;
+}
+
+.img_categoria{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    border: 5px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    animation:  categoria .5s forwards;
+}
+
+.img_categoria img{
+    width: 100%;
+    height: 100%;
+}
+
+.ganador_versus{
+    position: absolute;
+    width: 300px;
+    display: none;
+}
+
+.ganador_versus .img_ganador{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    color: white;
+}
+
+.ganador_versus h4{
+    margin-top: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.ganador_versus_show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes categoria{
+    0%{
+        top: -200px;
+        box-shadow: none;
+    }
+    100%{
+        top:20px;
+        box-shadow: 0px 0px 10px 0px white;
+    }
+}
+
+@media screen and (max-width:290px){
+    .categoria>.label{
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:515px){
+    .tiempos{
+        display: none;
+    }
+}
+
+@media screen and (max-width:510px){
+    .principal{
+        width: 80%;
+    }
+}
+
+@media screen and (max-height:634px){
+    .inicio{
+        height: 200vh;
+    }
+    .pant1{
+        height: 200vh;
+    }
+}
+
+@media screen and (max-width:790px){
+    .pant1{
+        width: 100%;
+    }
+    .inscripcion>.botones,.inscripcion>.input{
+        width: 100%;
+    }
+    .competidor>.input{
+        width: 80%;
+    }
+    .input_pequeño{
+        width: 48%;
+    }
+    .competidor>.input{
+        margin-bottom: 10px;
+    }
+    .primera_ronda{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width:1023px){
+    .img_categoria{
+        width: 80px;
+        height: 80px;
+    }
+    .competidor>.botones{
+        margin-top: 5px;
+    }
+
+}
+
+@media screen and (max-width:1250px){
+    .competidor{
+        width: 100%;
+    }
+}
+
+
+.botones:disabled{
+    cursor: context-menu;
+    background-color: rgb(154, 154, 154);
+    color: white;
+}
+
+.show_section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ronda_show{
+    display: block;
+}
+

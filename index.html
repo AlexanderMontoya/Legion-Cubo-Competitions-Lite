@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitions Lite</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="funciones.js"></script>
+    <link rel="shortcut icon" href="logo_LegionCubo_CompetionsLite.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3783c670b9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="inicio">
+        <img src="logo_LegionCubo_CompetionsLite.png" alt="legion Cubo">
+    </section>
+    <div id="img_categoria"></div>
+    <div class="pant1">
+        <main class="principal" >
+            <section class="categoria show_section" id="categoria">
+                <label for="category" class="label">Elige la categoria:   </label>
+                <select name="category" id="category" class="input">
+                    <option value="3x3">3x3x3</option>
+                    <option value="2x2">2x2x2</option>
+                    <option value="4x4">4x4x4</option>
+                    <option value="pyraminx">Pyraminx</option>
+                    <option value="skewb">Skewb</option>
+                    <option value="clock">Clock</option>
+                </select>
+                <button onclick="categoria()" class="botones">Continuar</button>
+            </section>
+            <section class="inscripcion" id="inscripcion">
+                <label for="nombres" class="label" id="cant_participantes">Participantes: </label>
+                <input type="text" id="nombres" class="input" placeholder="Ingrese el nombre">
+                <input type="text" id="color" class="input" placeholder="Ingrese un color">
+                <button class="botones" onclick="agregar_participante()">Agregar Participante</button>
+                <button class="botones" disabled onclick="go()" id="botongo">GO!</button>
+            </section>
+            <section class="pant_puntos" id="pant_puntos">
+                <label for="puntos" class="label">Cantidad de Puntos: </label>
+                <select name="puntos" id="puntos" class="input">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+                <button class="botones" onclick="cant_scrambles(1)">Continuar</button>
+            </section>
+            <section class="pant_rondas" id="pant_rondas">
+                <label for="rondas" class="label">Cantidad de Rondas: </label>
+                <select name="rondas" id="rondas" class="input">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <button class="botones" onclick="cant_scrambles(2)">Continuar</button>
+            </section>
+            <section class="pant_mezclas" id="pant_mezclas">
+                <label for="mezcla" id="label_mezclas" class="label">Solves: </label>
+                <input type="text" id="mezcla" placeholder="Ingrese la mezcla" class="input">
+                <button onclick="agregar_Mezcla()" class="botones" id="agregar_mezcla">Agregar Mezcla</button>
+                <button onclick="inicio_competition()" class="botones" id="empezar" disabled>Empezar</button>
+            </section>
+            <section class="pant_participantes" id="pant_participantes">
+            </section>
+        </main>
+        <section class="primera_ronda rondas" id="primera_ronda">
+        </section>
+        <section class="segunda_ronda rondas" id="segunda_ronda">
+        </section>
+        <section class="tercera_ronda rondas" id="tercera_ronda">
+        </section>
+        <section class="ganador_versus" id="ganador_versus">
+           <!-- <div class="img_ganador">
+            <i class="fa-solid fa-user"></i>
+           </div>
+           <h4>Alexander Montoya</h4> -->
+        </section>
+        <section class="contenedor_rondas" id="contenedor_rondas">
+            <h2>Rondas</h2>
+            <button class="botones" onclick="ver_primera_ronda()">Primera Ronda</button>
+            <button class="siguiente_ronda" id="boton_segunda_ronda" onclick="ver_segunda_ronda()">Segunda Ronda</button>
+            <button class="siguiente_ronda" id="boton_tercera_ronda" onclick="ver_tercera_ronda()">Tercera Ronda</button>
+        </section>
+        <section class="contenedor_versus" id="contenedor_versus">
+            <h2>Puntos</h2>
+            <table id="tabla_versus">
+                <tr>
+                    <th class="nombre">Alexander</th><th></th><th></th><th class="nombre">Diego</th>
+                </tr>
+                <tr>
+                    <td>12.11</td><td id="part1">1</td><td id="part2">0</td><td>15.12</td>
+                </tr>
+            </table>
+        </section>
+        <button class="boton_menu" onclick="ver_rondas()" id="boton_menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+</body>
+</html>
