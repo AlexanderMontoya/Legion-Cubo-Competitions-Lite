@@ -426,6 +426,7 @@ function ver_versus_puntajes(id,contador_scramble,igualitos){
 
 function ver_ganador_versus(id){
     let win =`
+        <h4>Ganador</h4>
         <div class="img_ganador" style="background-color:${participantes[id][2]};">
             <i class="fa-solid fa-user"></i>
         </div>
