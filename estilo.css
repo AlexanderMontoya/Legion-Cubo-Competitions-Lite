@@ -280,6 +280,9 @@ select option{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#pant_mezcla .label{
     text-align:center;
     font-size:20px;
 }
